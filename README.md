@@ -1,5 +1,10 @@
 # mc-status-probe
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Crates.io](https://img.shields.io/crates/v/mc-status-probe.svg)](https://crates.io/crates/mc-status-probe)
+
+English | [中文](./README_zh-cn.md)
+
 A zero-dependency, protocol-level Minecraft Java server status probe. Built from scratch following the [wiki.vg Server List Ping](https://wiki.vg/Server_List_Ping) protocol specification.
 
 ## Features
@@ -30,6 +35,14 @@ async fn main() {
 }
 ```
 
+## How It Works
+
+1. Opens a TCP connection to the Minecraft server
+2. Sends a Handshake packet (protocol version + server address + "status" next state)
+3. Sends a Status Request packet (empty packet)
+4. Reads and parses the Status Response JSON
+5. Calculates round-trip latency
+
 ## Protocol Version Reference
 
 | Minecraft Version | Protocol Version |
@@ -45,15 +58,7 @@ async fn main() {
 | 1.19 | 759 |
 | 1.18.2 | 758 |
 
-Full list: <https://wiki.vg/Protocol_version_numbers>
-
-## License
-
-1. Opens a TCP connection to the Minecraft server
-2. Sends a Handshake packet (protocol version + server address + "status" next state)
-3. Sends a Status Request packet
-4. Reads and parses the Status Response JSON
-5. Calculates round-trip latency
+Full list: https://wiki.vg/Protocol_version_numbers
 
 ## License
 

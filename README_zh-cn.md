@@ -1,6 +1,7 @@
 # mc-status-probe
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Crates.io](https://img.shields.io/crates/v/mc-status-probe.svg)](https://crates.io/crates/mc-status-probe)
 
 [English](./README.md) | 中文
 
@@ -38,7 +39,7 @@ async fn main() {
 
 1. 建立到 Minecraft 服务器的 TCP 连接
 2. 发送 Handshake 包（协议版本 + 服务器地址 + 下一状态 = "查询"）
-3. 发送 Status Request 包
+3. 发送 Status Request 包（空包）
 4. 读取并解析 Status Response JSON
 5. 计算往返延迟
 
@@ -90,7 +91,7 @@ async fn main() {
 | 1.19 | 759 |
 | 1.18.2 | 758 |
 
-完整列表见 <https://wiki.vg/Protocol_version_numbers>。
+完整列表见 https://wiki.vg/Protocol_version_numbers
 
 ## 许可证
 
