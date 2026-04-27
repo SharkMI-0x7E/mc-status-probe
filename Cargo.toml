@@ -1,6 +1,6 @@
 [package]
 name = "mc-status-probe"
-version = "0.1.0-alpha.2"
+version = "0.1.0-alpha.3"
 edition = "2021"
 authors = ["SharkMI-0x7E"]
 description = "A zero-dependency Minecraft Java server status probe based on wiki.vg Server List Ping protocol"
